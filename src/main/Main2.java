@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Main2 {
 	private static final String SEPARADOR_CSV = ",";
-	private static String diretorioCSV = "C:/Users/henrique/Downloads/acoes.csv";
+	private static String diretorioCSV = "C:/csv/acoes.csv";
 	private static String linhaDoMeuCsv;
 
 	private static Map<String, String> map = new HashMap<>();
