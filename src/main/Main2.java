@@ -12,7 +12,7 @@ import java.util.Map;
 public class Main2 {
 	private static final String SEPARADOR_CSV = ",";
 	private static String diretorioCSV = "C:/Users/henrique/Downloads/acoes.csv";
-	private static String linhaDoMeuCsv; // "teste,teste2,teste3,test4";
+	private static String linhaDoMeuCsv;
 
 	private static Map<String, String> map = new HashMap<>();
 	
@@ -22,8 +22,6 @@ public class Main2 {
 	private static String dataClose;
 	private static String volume;
 	private static BufferedReader reader;
-
-	
 
 	public static void LoadMap() {
 		try {
@@ -43,7 +41,6 @@ public class Main2 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		//System.out.println(map);
 	}
 
 	public static void getMaiorFechamento() throws FileNotFoundException {
@@ -99,36 +96,9 @@ public class Main2 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
-	/*
-	 * public static void getRetorno() { try { reader = new BufferedReader(new
-	 * FileReader(diretorioCSV)); reader.readLine();
-	 * 
-	 * while ((linhaDoMeuCsv = reader.readLine()) != null) { String[]
-	 * colunasDoMeuCsv = linhaDoMeuCsv.split(SEPARADOR_CSV); acao =
-	 * colunasDoMeuCsv[0]; data = colunasDoMeuCsv[1];
-	 * 
-	 * close = colunasDoMeuCsv[2];
-	 * 
-	 * String dataClose = data + ", " + close;
-	 * 
-	 * String retorno = (close / close ) -1;
-	 * 
-	 * if (value > Double.parseDouble(close)) { map.put(acao, dataClose); } }
-	 * reader.close(); } catch (IOException e) { e.printStackTrace(); }
-	 * System.out.println("Dia de maior retorno: " + map);
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * }
-	 */
-
 	public static void getVolumeAverage() {
-
 		try {
 			reader = new BufferedReader(new FileReader(diretorioCSV));
 			reader.readLine();
@@ -174,12 +144,11 @@ public class Main2 {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public static void main(String[] args) throws FileNotFoundException {
 		LoadMap();
 		getMaiorFechamento();
 		getMenorFechamento();
 		getVolumeAverage();
 	}
-
 }
